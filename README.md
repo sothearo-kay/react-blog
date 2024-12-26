@@ -33,6 +33,7 @@ cd react-blog
 pnpm install
 ```
 
+> [!NOTE]
 > Alternatively, you can click the `Use this template` button on the GitHub page to create a new repository based on this template.
 
 <br>
