@@ -5,6 +5,12 @@ type SkeletonProps = {
   className: string;
 };
 
+const variantClasses = {
+  text: "h-4 w-full rounded-sm",
+  circle: "rounded-full",
+  rect: "rounded-lg",
+};
+
 export const Skeleton: React.FC<Partial<SkeletonProps>> = ({
   count = 1,
   variant = "text",
@@ -18,18 +24,12 @@ export const Skeleton: React.FC<Partial<SkeletonProps>> = ({
     height: size.height,
   };
 
-  const variantClasses = {
-    text: "h-4 w-full rounded-sm",
-    circle: "rounded-full",
-    rect: "rounded-lg",
-  };
-
   return (
     <>
       {skeletonItems.map((_, index) => (
         <div
           key={index}
-          className={`bg-neutral-200 animate-pulse ${variantClasses[variant]} ${className}`}
+          className={`animate-pulse bg-neutral-200 ${variantClasses[variant]} ${className}`}
           style={baseStyle}
         ></div>
       ))}
