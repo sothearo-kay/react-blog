@@ -6,6 +6,7 @@ import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github.css";
 
 import Skeleton from "../../components/skeleton";
+import BlockCode from "../../components/blockCode";
 
 const fetchPost = async (slug: string) => {
   const response = await fetch(`/blog/${slug}.md`);
@@ -35,6 +36,16 @@ export default function Post() {
         children={markdownContent}
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeHighlight]}
+        components={{
+          pre(props) {
+            const { children, className, ...rest } = props;
+            return (
+              <BlockCode {...rest} className={className}>
+                {children}
+              </BlockCode>
+            );
+          },
+        }}
       />
     </div>
   );

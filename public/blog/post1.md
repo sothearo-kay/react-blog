@@ -7,5 +7,5 @@ This is a simple markdown file.
 - List item 3
 
 ```ts
-console.log("Hello, world!");
+console.log("Hello, meow!");
 ```
