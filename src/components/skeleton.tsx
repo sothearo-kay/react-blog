@@ -29,7 +29,7 @@ export const Skeleton: React.FC<Partial<SkeletonProps>> = ({
       {skeletonItems.map((_, index) => (
         <div
           key={index}
-          className={`bg-gray-300 animate-pulse ${variantClasses[variant]} ${className}`}
+          className={`bg-neutral-200 animate-pulse ${variantClasses[variant]} ${className}`}
           style={baseStyle}
         ></div>
       ))}
