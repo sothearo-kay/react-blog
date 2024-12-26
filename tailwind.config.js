@@ -9,6 +9,9 @@ export default {
           DEFAULT: "1rem",
           md: "1.5rem",
         },
+        screens: {
+          DEFAULT: "48rem",
+        },
       },
     },
   },

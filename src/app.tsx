@@ -1,15 +1,19 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router";
+import RootLayout from "./layout";
+import Home from "./routes/home";
+import Blog from "./routes/blog";
+import Post from "./routes/blog/post";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+export default function App() {
   return (
-    <div className="container">
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<RootLayout />}>
+          <Route index element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<Post />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
